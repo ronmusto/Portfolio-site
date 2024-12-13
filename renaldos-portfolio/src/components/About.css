@@ -1,0 +1,15 @@
+.about {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .about h1 {
+    font-size: 2rem;
+    color: #282c34;
+  }
+  
+  .about p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
