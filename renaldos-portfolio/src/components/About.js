@@ -52,7 +52,7 @@ function About() {
 
       {/* Contact Section */}
       <section className="about-contact">
-        <h2>Let’s Connect</h2>
+        <h2>Let's Connect</h2>
         <p>
           Feel free to reach out to discuss projects, ideas, or opportunities. 
           I'm always excited to collaborate and learn!
