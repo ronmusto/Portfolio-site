@@ -75,3 +75,11 @@
 .about-contact .btn:hover {
   background-color: #555;
 }
+
+body.dark-mode .about-text {
+  color: white;
+}
+
+body:not(.dark-mode) .about-text {
+  color: black;
+}
