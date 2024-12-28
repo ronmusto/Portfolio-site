@@ -76,10 +76,9 @@
   background-color: #555;
 }
 
-body.dark-mode .about-text {
+body.dark-mode .about-education,
+body.dark-mode .about-contact {
   color: white;
 }
 
-body:not(.dark-mode) .about-text {
-  color: black;
-}
+

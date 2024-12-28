@@ -23,7 +23,7 @@ function Home() {
 
       {/* Skills Overview */}
       <section className="skills-overview">
-        <h2>Technical Skills</h2>
+      <h2>Technical Skills</h2>
         <div className="skills-grid">
           <div className="skill-card">JavaScript</div>
           <div className="skill-card">React</div>
@@ -36,7 +36,7 @@ function Home() {
 
       {/* Portfolio Preview */}
       <section className="portfolio-preview">
-        <h2>Portfolio</h2>
+      <h2>Portfolio</h2>
         <div className="portfolio-grid">
           <div className="portfolio-item">
             <h3>Full-Stack App</h3>
@@ -56,7 +56,7 @@ function Home() {
 
       {/* Contact Section */}
       <section className="contact-cta">
-        <h2>Let’s Connect</h2>
+        <h2>Let's Connect</h2>
         <p>Have a question or want to work together? Feel free to reach out!</p>
         <a href="/contact" className="btn">Contact Me</a>
       </section>

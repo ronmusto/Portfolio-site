@@ -1,12 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
 function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    // Check localStorage for the user's theme preference
+    const savedTheme = localStorage.getItem('darkMode');
+    return savedTheme ? JSON.parse(savedTheme) : false;
+  });
+
+  useEffect(() => {
+    // Apply the theme on initial load
+    document.body.classList.toggle('dark-mode', darkMode);
+  }, [darkMode]);
 
   const toggleTheme = () => {
-    setDarkMode(!darkMode);
-    document.body.classList.toggle('dark-mode', !darkMode);
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.body.classList.toggle('dark-mode', newDarkMode);
+    localStorage.setItem('darkMode', JSON.stringify(newDarkMode));
   };
 
   return (

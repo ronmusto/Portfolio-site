@@ -44,6 +44,13 @@
   padding: 2rem 1rem;
 }
 
+body.dark-mode .about-preview,
+body.dark-mode .skills-section-title,
+body.dark-mode .portfolio-section-title,
+body.dark-mode .contact-cta {
+  color: white;
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -56,6 +63,13 @@
   padding: 1rem;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .about-section-title h2,
+body.dark-mode .skills-section-title h2,
+body.dark-mode .portfolio-section-title h2,
+body.dark-mode .contact-cta h2 {
+ color: white;
 }
 
 .portfolio-grid {
@@ -83,7 +97,6 @@
 .link:hover {
   text-decoration: underline;
 }
-
 .contact-cta .btn {
   background-color: #333;
   color: white;
@@ -92,3 +105,4 @@
 .contact-cta .btn:hover {
   background-color: #555;
 }
+
