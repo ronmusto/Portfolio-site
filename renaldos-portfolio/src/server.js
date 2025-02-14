@@ -1,34 +1,50 @@
 import express from 'express';
 import cors from 'cors';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 import dotenv from 'dotenv';
 
 dotenv.config();
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Create the nodemailer transporter
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS, // Use your App Password here
+  },
+});
 
 app.post('/api/contact', async (req, res) => {
   const { name, email, message } = req.body;
+
+  console.log("Received contact request:", { name, email, message });
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'All fields are required.' });
   }
 
   try {
-    await resend.emails.send({
-      from: 'contact@yourdomain.com',
-      to: process.env.RECEIVING_EMAIL,
+    // Email options
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER, // Send email to yourself (Gmail)
       subject: `New Contact Message from ${name}`,
       html: `<p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Message:</strong> ${message}</p>`
-    });
+             <p><strong>Message:</strong> ${message}</p>`,
+    };
+
+    // Send the email
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent:", info.response);
+
     res.status(200).json({ success: 'Message sent successfully!' });
   } catch (error) {
-    console.error('Email Error:', error);
+    console.error("Nodemailer error:", error);
     res.status(500).json({ error: 'Failed to send message.' });
   }
 });

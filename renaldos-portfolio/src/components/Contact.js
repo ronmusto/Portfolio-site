@@ -25,26 +25,39 @@ function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
-
+    console.log("Form submitted!"); // Confirm function fires
+  
+    if (!validateForm()) {
+      console.log("Validation failed:", errors);
+      return;
+    }
+  
+    console.log("Form validation passed. Sending request...", formData);
+  
     try {
       const response = await fetch('http://localhost:5000/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-
+  
+      console.log("Response received:", response);
+  
       if (response.ok) {
         setStatusMessage('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
+        console.log("Success: Message sent!");
       } else {
+        const errorResponse = await response.json();
         setStatusMessage('Error sending message. Please try again.');
+        console.log("Server error:", errorResponse);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Fetch error:", error);
       setStatusMessage('Network error. Please try again.');
     }
   };
+  
 
   return (
     <div className="contact">
