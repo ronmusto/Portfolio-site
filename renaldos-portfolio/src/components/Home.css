@@ -50,6 +50,11 @@ body.dark-mode .portfolio-section-title,
 body.dark-mode .contact-cta {
   color: white;
 }
+body.dark-mode .skills-overview h2,
+body.dark-mode .portfolio-preview h2 {
+  color: #ffffff; /* Ensure the titles are white in dark mode */
+  font-weight: bold; /* Enhance readability */
+}
 
 .skills-grid {
   display: grid;

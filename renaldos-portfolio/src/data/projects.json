@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "title": "Personal Task Manager",
+      "description": "A full-stack task management app with user authentication, due date reminders, and cloud storage.",
+      "image": "/images/task-manager.png",
+      "link": "#",
+      "tags": ["Full-Stack", "MERN", "AWS"]
+    },
+    {
+      "id": 2,
+      "title": "Real-Time Data Dashboard",
+      "description": "A dashboard displaying live data using APIs, interactive charts, and real-time analytics.",
+      "image": "/images/data-dashboard.png",
+      "link": "#",
+      "tags": ["Data Science", "Visualization", "React", "API Integration"]
+    },
+    {
+      "id": 3,
+      "title": "Resume Keyword Analyzer",
+      "description": "An AI-powered tool that analyzes resumes and suggests keyword optimizations based on job descriptions.",
+      "image": "/images/resume-analyzer.png",
+      "link": "#",
+      "tags": ["Machine Learning", "NLP", "Python", "Flask"]
+    },
+    {
+      "id": 4,
+      "title": "Serverless URL Shortener",
+      "description": "A cloud-based URL shortener with analytics tracking using AWS Lambda and DynamoDB.",
+      "image": "/images/url-shortener.png",
+      "link": "#",
+      "tags": ["Cloud", "Serverless", "AWS", "DynamoDB"]
+    }
+  ]
+  

@@ -77,8 +77,16 @@
 }
 
 body.dark-mode .about-education,
+body.dark-mode .about-skills,
+body.dark-mode .about-hero,
 body.dark-mode .about-contact {
-  color: white;
+  color: #0fa0b4; /* Ensure the titles are white in dark mode */
+  font-weight: bold; /* Enhance readability */
 }
+
+body.dark-mode .skill-card{
+  color: grey
+}
+
 
 
