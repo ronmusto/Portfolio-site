@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS, // Use your App Password here
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -31,7 +31,7 @@ app.post('/api/contact', async (req, res) => {
     // Email options
     const mailOptions = {
       from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // Send email to yourself (Gmail)
+      to: process.env.EMAIL_USER,
       subject: `New Contact Message from ${name}`,
       html: `<p><strong>Name:</strong> ${name}</p>
              <p><strong>Email:</strong> ${email}</p>
